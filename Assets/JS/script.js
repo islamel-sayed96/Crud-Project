@@ -17,3 +17,23 @@ function addProduct(){
     productContainer.push(product)
     console.log(productContainer);
 }
+ function displayProduct(){
+    var cartona = '';
+    for ( var i = 0 ; i < productContainer.length ; i++){
+        cartona +=   `<tr>
+                        <td>Toshiba</td>
+                        <td>4000</td>
+                        <td>Tv</td>
+                        <td>Smart Tv</td>
+                        <td>
+                            <button class="btn btn-warning btn-sm">Update</button>
+                        </td>
+                        <td>
+                            <button class="btn btn-danger btn-sm">Delete</button>
+                        </td>
+                     </tr>`
+    }
+    document.getElementById('tableBody').innerHTML = cartona;
+ }
+ displayProduct();
+

@@ -15,16 +15,24 @@ function addProduct(){
         desc : productDescInput.value,
     }
     productContainer.push(product)
-    console.log(productContainer);
+    displayProducts(productContainer); // for add
+    clearForm();
+
 }
- function displayProduct(){
+function clearForm(){
+    productNameInput.value = " " ;
+    productPriceInput.value = " " ;
+    productCategoryInput.value = " " ;
+    productDescInput.value = " " ;
+}
+ function displayProducts(arr){
     var cartona = '';
-    for ( var i = 0 ; i < productContainer.length ; i++){
+    for ( var i = 0 ; i < arr.length ; i++){
         cartona +=   `<tr>
-                        <td>Toshiba</td>
-                        <td>4000</td>
-                        <td>Tv</td>
-                        <td>Smart Tv</td>
+                        <td>${arr[i].name}</td>
+                        <td>${arr[i].price}</td>
+                        <td>${arr[i].category}</td>
+                        <td>${arr[i].desc}</td>
                         <td>
                             <button class="btn btn-warning btn-sm">Update</button>
                         </td>
@@ -35,5 +43,5 @@ function addProduct(){
     }
     document.getElementById('tableBody').innerHTML = cartona;
  }
- displayProduct();
+ displayProducts();
 

@@ -37,11 +37,17 @@ function clearForm(){
                             <button class="btn btn-warning btn-sm">Update</button>
                         </td>
                         <td>
-                            <button class="btn btn-danger btn-sm">Delete</button>
+                            <button onclick="deleteProduct(${i});" class="btn btn-danger btn-sm">Delete</button>
                         </td>
                      </tr>`
     }
     document.getElementById('tableBody').innerHTML = cartona;
  }
  displayProducts();
+
+ function deleteProduct(productIndex){
+    productContainer.splice(productIndex,1);
+    displayProducts(productContainer);
+
+ }
 

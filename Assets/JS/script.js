@@ -6,6 +6,12 @@ var productDescInput = document.getElementById('ProductDesc'); //  all input ...
 // ProductName >  id of input 
 // console.log(productNameInput , productPriceInput , productCategoryInput , productDescInput);
 
+localStorage.setItem("academy" , "Albyan");
+localStorage.setItem("instructor" , "Eslam");
+console.log(localStorage.key(0));
+
+sessionStorage.setItem('userAge' ,'27');
+
 var productContainer = [] ;
 function addProduct(){
     var product = {

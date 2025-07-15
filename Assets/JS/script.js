@@ -21,6 +21,7 @@ function addProduct(){
         desc : productDescInput.value,
     }
     productContainer.push(product)
+    localStorage.setItem("products" , JSON.stringify(productContainer))
     displayProducts(productContainer); // for add
     clearForm();
 

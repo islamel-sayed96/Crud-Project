@@ -13,6 +13,10 @@ console.log(localStorage.key(0));
 sessionStorage.setItem('userAge' ,'27');
 
 var productContainer = [] ;
+ if (localStorage.getItem('products') != null) //zobon adim 
+ {
+    productContainer = JSON.parse (localStorage.getItem('products')) ;
+ }
 function addProduct(){
     var product = {
         name : productNameInput.value ,

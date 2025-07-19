@@ -16,6 +16,7 @@ var productContainer = [] ;
  if (localStorage.getItem('products') != null) //zobon adim 
  {
     productContainer = JSON.parse (localStorage.getItem('products')) ;
+    displayProducts(productContainer);
  }
 function addProduct(){
     var product = {

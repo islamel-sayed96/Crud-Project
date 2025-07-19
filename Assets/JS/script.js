@@ -59,6 +59,7 @@ function clearForm(){
 
  function deleteProduct(productIndex){
     productContainer.splice(productIndex,1);
+    localStorage.setItem("products" , JSON.stringify(productContainer))
     displayProducts(productContainer);
 
  }

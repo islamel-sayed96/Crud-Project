@@ -63,5 +63,5 @@ function clearForm(){
     displayProducts(productContainer);
 
  }
-console.log("samsung Note 8".toLowerCase().includes("Note"));
+console.log("samsung Note 8".toLowerCase().includes("Note")).toLowerCase();
 

@@ -38,8 +38,8 @@ function clearForm(){
     productDescInput.value = " " ;
 }
  function displayProducts(arr){
-    var cartona = '';
-    for ( var i = 0 ; i < arr.length ; i++){
+    var cartona = ` `;
+    for ( var i = 0 ; i<arr.length ; i++){
         cartona +=   `<tr>
                         <td>${arr[i].name}</td>
                         <td>${arr[i].price}</td>
@@ -55,7 +55,7 @@ function clearForm(){
     }
     document.getElementById('tableBody').innerHTML = cartona;
  }
- displayProducts();
+ displayProducts(productContainer);
 
  function deleteProduct(productIndex){
     productContainer.splice(productIndex,1);
@@ -63,4 +63,5 @@ function clearForm(){
     displayProducts(productContainer);
 
  }
+console.log("samsung Note 8".toLowerCase().includes("Note"));
 

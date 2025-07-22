@@ -1,16 +1,16 @@
-var productNameInput = document.getElementById('ProductName'); //  all input ...
-var productPriceInput = document.getElementById('ProductPrice'); //  all input ...
+var productNameInput = document.getElementById ('ProductName'); //  all input ...
+var productPriceInput = document.getElementById ('ProductPrice'); //  all input ...
 var productCategoryInput = document.getElementById('ProductCategory'); //  all input ...
 var productDescInput = document.getElementById('ProductDesc'); //  all input ...
-
+var searchInput = document.getElementById('searchInput');//Input Kolo
 // ProductName >  id of input 
 // console.log(productNameInput , productPriceInput , productCategoryInput , productDescInput);
 
-localStorage.setItem("academy" , "Albyan");
-localStorage.setItem("instructor" , "Eslam");
-console.log(localStorage.key(0));
+// localStorage.setItem("academy" , "Albyan");
+// localStorage.setItem("instructor" , "Eslam");
+// console.log(localStorage.key(0));
 
-sessionStorage.setItem('userAge' ,'27');
+// sessionStorage.setItem('userAge' ,'27');
 
 var productContainer = [] ;
  if (localStorage.getItem('products') != null) //zobon adim 
@@ -57,11 +57,25 @@ function clearForm(){
  }
  displayProducts(productContainer);
 
+ function searchProducts(term){
+    var matchProduct = [] ;
+    for(var i = 0 ; i <productContainer.length;i++){
+        if(productContainer[i].name.toLowerCase().includes(term.toLowerCase()) === true){
+            matchProduct.push(productContainer[i])
+            
+        }
+    }
+    console.log(matchProduct);
+    displayProducts(matchProduct);
+    
+ }
+ searchProducts()
+
  function deleteProduct(productIndex){
     productContainer.splice(productIndex,1);
     localStorage.setItem("products" , JSON.stringify(productContainer))
     displayProducts(productContainer);
 
  }
-console.log("samsung Note 8".toLowerCase().includes("Note")).toLowerCase();
+// console.log("samsung Note 8".toLowerCase().includes("Note")).toLowerCase();
 

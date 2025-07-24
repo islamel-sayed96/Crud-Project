@@ -3,6 +3,8 @@ var productPriceInput = document.getElementById ('ProductPrice'); //  all input 
 var productCategoryInput = document.getElementById('ProductCategory'); //  all input ...
 var productDescInput = document.getElementById('ProductDesc'); //  all input ...
 var searchInput = document.getElementById('searchInput');//Input Kolo
+var addBtn =document.getElementById('addBtn');
+var updateBtn = document.getElementById('updateBtn');
 // ProductName >  id of input 
 // console.log(productNameInput , productPriceInput , productCategoryInput , productDescInput);
 
@@ -46,7 +48,7 @@ function clearForm(){
                         <td>${arr[i].category}</td>
                         <td>${arr[i].desc}</td>
                         <td>
-                            <button class="btn btn-warning btn-sm">Update</button>
+                            <button onclick="setFormForUpdate(${i})" class="btn btn-warning btn-sm">Update</button>
                         </td>
                         <td>
                             <button onclick="deleteProduct(${i});" class="btn btn-danger btn-sm">Delete</button>
@@ -79,3 +81,11 @@ function clearForm(){
  }
 // console.log("samsung Note 8".toLowerCase().includes("Note")).toLowerCase();
 
+function setFormForUpdate(i){
+    addBtn.classList.replace('d-block' , 'd-none');
+    updateBtn.classList.replace('d-none' , 'd-block');
+    productNameInput.value=productContainer[i].name;
+    productPriceInput.value=productContainer[i].price;
+    productCategoryInput.value=productContainer[i].category;
+    productDescInput.value=productContainer[i].desc;
+}

@@ -5,6 +5,7 @@ var productDescInput = document.getElementById('ProductDesc'); //  all input ...
 var searchInput = document.getElementById('searchInput');//Input Kolo
 var addBtn =document.getElementById('addBtn');
 var updateBtn = document.getElementById('updateBtn');
+var updatedIndex;
 // ProductName >  id of input 
 // console.log(productNameInput , productPriceInput , productCategoryInput , productDescInput);
 
@@ -88,4 +89,30 @@ function setFormForUpdate(i){
     productPriceInput.value=productContainer[i].price;
     productCategoryInput.value=productContainer[i].category;
     productDescInput.value=productContainer[i].desc;
+    updatedIndex = i; // نحفظ الـ index اللي هيتم تعديله
+    
+}
+function updateProduct() {
+    var updatedProduct = {
+        name: productNameInput.value,
+        price: productPriceInput.value,
+        category: productCategoryInput.value,
+        desc: productDescInput.value
+    };
+
+    // حدّث المنتج في الـ Array
+    productContainer[updatedIndex] = updatedProduct;
+
+    // خزّنه في localStorage
+    localStorage.setItem("products", JSON.stringify(productContainer));
+
+    // اعرض الجدول من جديد
+    displayProducts(productContainer);
+
+    // نظّف الفورم
+    clearForm();
+
+    // رجّع الأزرار لحالتها
+    addBtn.classList.replace('d-none', 'd-block');
+    updateBtn.classList.replace('d-block', 'd-none');
 }

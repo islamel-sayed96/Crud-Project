@@ -116,3 +116,6 @@ function updateProduct() {
     addBtn.classList.replace('d-none', 'd-block');
     updateBtn.classList.replace('d-block', 'd-none');
 }
+// regular expression 
+/^[A-Z][a-z]{3,}$ /
+var x = /ab/
